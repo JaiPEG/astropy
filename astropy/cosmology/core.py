@@ -242,8 +242,7 @@ class FLRW(Cosmology):
                 else:
                     self._massivenu = True
                     if len(m_nu) != self._nneutrinos:
-                        errstr = "Unexpected number of neutrino masses"
-                        raise ValueError(errstr)
+                        raise ValueError("Unexpected number of neutrino masses")
                     # Segregate out the massless ones
                     self._nmasslessnu = len(np.nonzero(m_nu.value == 0)[0])
                     self._nmassivenu = self._nneutrinos - self._nmasslessnu
